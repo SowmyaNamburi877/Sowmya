@@ -1,0 +1,35 @@
+package sowmya;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class selinumintro { 
+
+	public static void main(String[] args) {
+		
+	WebDriver driver = new ChromeDriver();
+driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+System.out.println(driver.getTitle());
+WebElement username=driver.findElement(By.name("username"));
+
+username.isDisplayed();
+username.isEnabled();
+username.sendKeys("Admin");
+WebElement password=driver.findElement(By.name("password"));
+
+password.isDisplayed();
+password.isEnabled();
+password.sendKeys("admin123");
+
+WebElement Login=driver.findElement(By.className("oxd-button oxd-button--medium oxd-button--main orangehrm-login-button"));
+Login.isDisplayed();
+Login.isEnabled();
+Login.click();
+System.out.println("driver.getTitle()");
+
+driver.close();
+	}
+
+}
+  

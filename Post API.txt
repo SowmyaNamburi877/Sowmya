@@ -1,0 +1,17 @@
+package sowmya;
+import org.testng.annotations.Test;
+import io.restassured.RestAssured;
+
+public class SampleAPi {
+@Test
+	public static void main(String[] args) {
+		RestAssured.baseURI="https://reqres.in/api/users";
+		RestAssured.given().body("{\r\n"
+				+ "    \"name\": \"Fun\",\r\n"
+				+ "    \"job\": \"SDET\"\r\n"
+				+ "}").post().then().log().all().assertThat().statuscode(201);
+			
+
+	}
+
+}
